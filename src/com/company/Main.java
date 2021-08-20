@@ -10,10 +10,17 @@ public class Main {
 
         console.greeting();
 
+
+
         store.addInventory(new Product("Mango",20,100));
+        store.addInventory(new Meat("Steak",20,100));
+        store.addInventory(new Dairy("Cream-cheese",20,100));
 
-        store.tossInventory(new Product("Mango"));
 
+        store.displayInventory();
 
+        store.tossInventory("Mango");
+
+        store.displayInventory();
     }
 }
