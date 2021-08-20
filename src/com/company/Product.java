@@ -2,10 +2,10 @@ package com.company;
 
 public class Product {
 
-    public String name;
-    public int price;
-    public int quantity;
-    public int wholeSale;
+    private String name;
+    private int price;
+    private int quantity;
+    private int wholeSale;
 
     public Product(String name){
         this.name = name;
@@ -16,5 +16,41 @@ public class Product {
         this.price = price;
         this.quantity = quantity;
         this.wholeSale = price * quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getWholeSale() {
+        return wholeSale;
+    }
+
+    public void setWholeSale(int wholeSale) {
+        this.wholeSale = wholeSale;
+    }
+
+    public void display(){
+        System.out.println("Name: "+getName() + " Price: " + getPrice() + " Quantity:" + getQuantity());
     }
 }
