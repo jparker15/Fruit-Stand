@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Console {
 
+    //fix console
+
     Scanner scanner = new Scanner(System.in);
     Store store = new Store(1000000000);
 
