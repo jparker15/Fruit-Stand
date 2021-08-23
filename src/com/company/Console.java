@@ -6,35 +6,37 @@ public class Console {
     //fix console
 
     Scanner scanner = new Scanner(System.in);
-    Store store = new Store(1000000000);
+    Store store = new Store(10000);
 
-    public void greeting(){
-        System.out.println("LMOAS");
-    }
+    public void userInterface() {
+        System.out.println("--------------------");
+        System.out.println("[1] Add Products to Inventory");
+        System.out.println("[2] Throw Away Old Products");
+        System.out.println("[3] Sell Products ");
+        System.out.println("[4] Display Inventory ");
 
-    public void add (){
-        System.out.println("Add a product!");
-        System.out.println("Meat (1) or Dairy (2)");
-        int yn = scanner.nextInt();
-        if(yn == 1){
-            System.out.println("enter Name of product:");
-            String name = scanner.next();
-            System.out.println("enter Price of product:");
-            int price = scanner.nextInt();
-            System.out.println("enter Quantity of product:");
-            int quantity = scanner.nextInt();
+        int answer = scanner.nextInt();
 
-            new Meat(name,price,quantity);
-        }else{
-            System.out.println("enter Name of product:");
-            String name = scanner.next();
-            System.out.println("enter Price of product:");
-            int price = scanner.nextInt();
-            System.out.println("enter Quantity of product:");
-            int quantity = scanner.nextInt();
+        switch (answer) {
+            case 1 -> {
+                System.out.println("Added");
+                store.addInventory();
+            }
+            case 2 -> {
+                System.out.println("Tossed");
+                store.tossInventory();
+            }
+            case 3 -> {
+                System.out.println("Sold");
+                store.sellInventory();
+            }
+            default -> {
 
-            new Dairy(name,price,quantity);
+                store.displayInventory();
+            }
         }
+
+
 
     }
 
